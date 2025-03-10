@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Admin Panel - GPT Learning Hub</title>
+    <link rel="stylesheet" href="admin-panel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>GPT Learning Hub</h2>
+                <p>Chatbot Admin</p>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="nav-item active" data-target="dashboard">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="nav-item" data-target="training">
+                        <i class="fas fa-brain"></i>
+                        <span>Training</span>
+                    </li>
+                    <li class="nav-item" data-target="conversations">
+                        <i class="fas fa-comments"></i>
+                        <span>Conversations</span>
+                    </li>
+                    <li class="nav-item" data-target="responses">
+                        <i class="fas fa-reply-all"></i>
+                        <span>Responses</span>
+                    </li>
+                    <li class="nav-item" data-target="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </li>
+                    <li class="nav-item" data-target="security">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Security</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button id="toggle-sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h2 id="page-title">Dashboard</h2>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span>Admin</span>
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Sections -->
+            <div class="content">
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="content-section active">
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Total Conversations</h3>
+                                <p class="stat-value">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Unique Users</h3>
+                                <p class="stat-value">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Documents</h3>
+                                <p class="stat-value">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-thumbs-up"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>Satisfaction Rate</h3>
+                                <p class="stat-value">0%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-charts">
+                        <div class="chart-container">
+                            <h3>Conversation Activity</h3>
+                            <div class="chart-placeholder">
+                                <p>Chart will be displayed here</p>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Popular Topics</h3>
+                            <div class="chart-placeholder">
+                                <p>Chart will be displayed here</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recent-activity">
+                        <h3>Recent Activity</h3>
+                        <table class="activity-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>User</th>
+                                    <th>Message</th>
+                                    <th>Response</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="4" class="empty-table">No recent activity</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Training Section -->
+                <section id="training" class="content-section">
+                    <div class="section-header">
+                        <h3>Train Your Chatbot</h3>
+                        <p>Upload documents, add URLs, or directly input knowledge to train your chatbot.</p>
+                    </div>
+
+                    <div class="training-tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="upload-docs">Document Upload</button>
+                            <button class="tab-btn" data-tab="web-urls">Web URLs</button>
+                            <button class="tab-btn" data-tab="direct-input">Direct Input</button>
+                            <button class="tab-btn" data-tab="qa-pairs">Q&A Pairs</button>
+                        </div>
+
+                        <div class="tab-content">
+                            <!-- Document Upload Tab -->
+                            <div id="upload-docs" class="tab-pane active">
+                                <div class="upload-area">
+                                    <div class="dropzone">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Drag and drop files here, or click to select files</p>
+                                        <p class="small">Supported formats: PDF, DOCX, TXT, CSV, JSON</p>
+                                        <input type="file" id="file-upload" multiple hidden>
+                                    </div>
+                                    <button class="btn-browse">Browse Files</button>
+                                </div>
+                                
+                                <div class="upload-list">
+                                    <h4>Uploaded Documents</h4>
+                                    <table class="files-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Filename</th>
+                                                <th>Size</th>
+                                                <th>Status</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="4" class="empty-table">No documents uploaded</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <div class="action-buttons">
+                                    <button class="btn btn-primary btn-process-docs">Process Documents</button>
+                                </div>
+                            </div>
+
+                            <!-- Web URLs Tab -->
+                            <div id="web-urls" class="tab-pane">
+                                <div class="url-input-area">
+                                    <h4>Add URLs to Train From</h4>
+                                    <p>Enter webpage URLs that contain relevant content for your chatbot training.</p>
+                                    
+                                    <div class="url-form">
+                                        <input type="url" id="url-input" placeholder="https://example.com/article">
+                                        <button class="btn btn-primary btn-add-url">Add URL</button>
+                                    </div>
+                                    
+                                    <div class="url-list">
+                                        <h4>Added URLs</h4>
+                                        <ul class="urls-table">
+                                            <li class="empty-list">No URLs added</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="action-buttons">
+                                        <button class="btn btn-primary btn-crawl-urls">Crawl & Process URLs</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Direct Input Tab -->
+                            <div id="direct-input" class="tab-pane">
+                                <div class="direct-input-area">
+                                    <h4>Add Knowledge Directly</h4>
+                                    <p>Enter information that your chatbot should learn and use when responding to users.</p>
+                                    
+                                    <div class="knowledge-form">
+                                        <div class="form-group">
+                                            <label for="knowledge-title">Title/Topic</label>
+                                            <input type="text" id="knowledge-title" placeholder="E.g., Course Registration Process">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="knowledge-content">Content</label>
+                                            <textarea id="knowledge-content" rows="10" placeholder="Enter detailed information here..."></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="knowledge-tags">Tags (comma separated)</label>
+                                            <input type="text" id="knowledge-tags" placeholder="E.g., courses, registration, process">
+                                        </div>
+                                        <button class="btn btn-primary btn-add-knowledge">Add Knowledge</button>
+                                    </div>
+                                    
+                                    <div class="knowledge-list">
+                                        <h4>Knowledge Base</h4>
+                                        <table class="knowledge-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Title</th>
+                                                    <th>Tags</th>
+                                                    <th>Date Added</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="4" class="empty-table">No knowledge entries added</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Q&A Pairs Tab -->
+                            <div id="qa-pairs" class="tab-pane">
+                                <div class="qa-pairs-area">
+                                    <h4>Add Question & Answer Pairs</h4>
+                                    <p>Add specific question and answer pairs to train your chatbot for common queries.</p>
+                                    
+                                    <div class="qa-form">
+                                        <div class="form-group">
+                                            <label for="question-input">Question</label>
+                                            <input type="text" id="question-input" placeholder="E.g., How do I enroll in a course?">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="answer-input">Answer</label>
+                                            <textarea id="answer-input" rows="5" placeholder="Enter the answer here..."></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="qa-tags">Tags (comma separated)</label>
+                                            <input type="text" id="qa-tags" placeholder="E.g., enrollment, course">
+                                        </div>
+                                        <button class="btn btn-primary btn-add-qa">Add Q&A Pair</button>
+                                    </div>
+                                    
+                                    <div class="qa-list">
+                                        <h4>Q&A Database</h4>
+                                        <table class="qa-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Question</th>
+                                                    <th>Tags</th>
+                                                    <th>Date Added</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="4" class="empty-table">No Q&A pairs added</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Conversations Section -->
+                <section id="conversations" class="content-section">
+                    <div class="section-header">
+                        <h3>User Conversations</h3>
+                        <p>View and analyze user interactions with your chatbot.</p>
+                    </div>
+                    
+                    <div class="conversations-filter">
+                        <div class="filter-controls">
+                            <div class="filter-group">
+                                <label for="date-range">Date Range:</label>
+                                <select id="date-range">
+                                    <option value="today">Today</option>
+                                    <option value="yesterday">Yesterday</option>
+                                    <option value="last-7-days" selected>Last 7 Days</option>
+                                    <option value="last-30-days">Last 30 Days</option>
+                                    <option value="custom">Custom Range</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="search-conversations">Search:</label>
+                                <input type="text" id="search-conversations" placeholder="Search conversations...">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="conversations-list">
+                        <table class="conversations-table">
+                            <thead>
+                                <tr>
+                                    <th>Date/Time</th>
+                                    <th>User</th>
+                                    <th>Messages</th>
+                                    <th>Duration</th>
+                                    <th>Rating</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="6" class="empty-table">No conversations found</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Responses Section -->
+                <section id="responses" class="content-section">
+                    <div class="section-header">
+                        <h3>Manage Responses</h3>
+                        <p>Customize and improve your chatbot's responses.</p>
+                    </div>
+                    
+                    <div class="responses-tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="canned-responses">Canned Responses</button>
+                            <button class="tab-btn" data-tab="fallback-responses">Fallback Responses</button>
+                            <button class="tab-btn" data-tab="greeting-responses">Greeting Messages</button>
+                        </div>
+                        
+                        <div class="tab-content">
+                            <div id="canned-responses" class="tab-pane active">
+                                <div class="canned-responses-area">
+                                    <div class="add-canned-response">
+                                        <h4>Add Canned Response</h4>
+                                        <form class="canned-response-form">
+                                            <div class="form-group">
+                                                <label for="response-name">Name/Trigger</label>
+                                                <input type="text" id="response-name" placeholder="E.g., pricing_inquiry">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="response-triggers">Trigger Keywords (comma separated)</label>
+                                                <input type="text" id="response-triggers" placeholder="E.g., price, cost, payment">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="response-content">Response Content</label>
+                                                <textarea id="response-content" rows="5" placeholder="Enter response content..."></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Add Response</button>
+                                        </form>
+                                    </div>
+                                    
+                                    <div class="canned-responses-list">
+                                        <h4>Existing Canned Responses</h4>
+                                        <table class="responses-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Triggers</th>
+                                                    <th>Response Preview</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="4" class="empty-table">No canned responses yet</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="fallback-responses" class="tab-pane">
+                                <div class="fallback-responses-area">
+                                    <h4>Default Fallback Responses</h4>
+                                    <p>These responses will be used when the chatbot doesn't understand a user's query.</p>
+                                    
+                                    <form class="fallback-responses-form">
+                                        <div class="fallback-responses-list">
+                                            <div class="fallback-response-item">
+                                                <textarea rows="3" placeholder="I'm sorry, I don't understand. Could you rephrase your question?"></textarea>
+                                                <div class="actions">
+                                                    <button type="button" class="btn-delete"><i class="fas fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="fallback-response-item">
+                                                <textarea rows="3" placeholder="I'm not sure I understand. Could you try asking in a different way?"></textarea>
+                                                <div class="actions">
+                                                    <button type="button" class="btn-delete"><i class="fas fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="fallback-response-item">
+                                                <textarea rows="3" placeholder="I'm still learning. Could you please clarify what you're asking about?"></textarea>
+                                                <div class="actions">
+                                                    <button type="button" class="btn-delete"><i class="fas fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="action-group">
+                                            <button type="button" class="btn btn-secondary btn-add-fallback">Add Another Fallback</button>
+                                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            
+                            <div id="greeting-responses" class="tab-pane">
+                                <div class="greeting-responses-area">
+                                    <h4>Welcome Messages</h4>
+                                    <p>These messages will be randomly selected when a user starts a new conversation.</p>
+                                    
+                                    <form class="greeting-responses-form">
+                                        <div class="greeting-responses-list">
+                                            <div class="greeting-response-item">
+                                                <textarea rows="3" placeholder="Hello! How can I assist you today?"></textarea>
+                                                <div class="actions">
+                                                    <button type="button" class="btn-delete"><i class="fas fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="greeting-response-item">
+                                                <textarea rows="3" placeholder="Hi there! Welcome to GPT Learning Hub. What can I help you with?"></textarea>
+                                                <div class="actions">
+                                                    <button type="button" class="btn-delete"><i class="fas fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="greeting-response-item">
+                                                <textarea rows="3" placeholder="Welcome! I'm your AI assistant. How may I help you today?"></textarea>
+                                                <div class="actions">
+                                                    <button type="button" class="btn-delete"><i class="fas fa-trash"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="action-group">
+                                            <button type="button" class="btn btn-secondary btn-add-greeting">Add Another Greeting</button>
+                                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Settings Section -->
+                <section id="settings" class="content-section">
+                    <div class="section-header">
+                        <h3>Chatbot Settings</h3>
+                        <p>Configure your chatbot's behavior and appearance.</p>
+                    </div>
+                    
+                    <div class="settings-form">
+                        <div class="settings-group">
+                            <h4>General Settings</h4>
+                            
+                            <div class="form-group">
+                                <label for="bot-name">Chatbot Name</label>
+                                <input type="text" id="bot-name" value="GPT Learning Hub Assistant">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="welcome-message">Welcome Message</label>
+                                <textarea id="welcome-message" rows="3">Hello! I'm here to help with any questions about our courses. How can I assist you today?</textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="chatbot-position">Chatbot Position</label>
+                                <select id="chatbot-position">
+                                    <option value="bottom-right" selected>Bottom Right</option>
+                                    <option value="bottom-left">Bottom Left</option>
+                                    <option value="top-right">Top Right</option>
+                                    <option value="top-left">Top Left</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="chatbot-theme">Theme</label>
+                                <select id="chatbot-theme">
+                                    <option value="light" selected>Light</option>
+                                    <option value="dark">Dark</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-group">
+                            <h4>Behavior Settings</h4>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="auto-open" checked>
+                                <label for="auto-open">Automatically open after 30 seconds</label>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="show-typing" checked>
+                                <label for="show-typing">Show typing indicator</label>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="collect-feedback" checked>
+                                <label for="collect-feedback">Collect user feedback</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="response-delay">Response Delay (ms)</label>
+                                <input type="number" id="response-delay" value="800" min="0" max="5000">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inactive-timeout">Inactive Timeout (minutes)</label>
+                                <input type="number" id="inactive-timeout" value="30" min="1" max="120">
+                            </div>
+                        </div>
+                        
+                        <div class="settings-group">
+                            <h4>Advanced Settings</h4>
+                            
+                            <div class="form-group">
+                                <label for="api-model">AI Model</label>
+                                <select id="api-model">
+                                    <option value="gpt-3.5-turbo" selected>GPT-3.5 Turbo</option>
+                                    <option value="gpt-4">GPT-4</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="temperature">Response Temperature</label>
+                                <input type="range" id="temperature" min="0" max="1" step="0.1" value="0.7">
+                                <span class="range-value">0.7</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="max-tokens">Max Response Tokens</label>
+                                <input type="number" id="max-tokens" value="500" min="100" max="4000">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="system-prompt">System Prompt</label>
+                                <textarea id="system-prompt" rows="5">You are an AI assistant for GPT Learning Hub, an online learning platform for AI and machine learning courses. Answer questions helpfully, accurately, and concisely. If you don't know the answer, say so and offer to connect the user with a human representative.</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn btn-secondary">Cancel</button>
+                            <button class="btn btn-primary">Save Settings</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Security Section -->
+                <section id="security" class="content-section">
+                    <div class="section-header">
+                        <h3>Security Settings</h3>
+                        <p>Manage authentication and security preferences.</p>
+                    </div>
+                    
+                    <div class="security-tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="change-password">Change Password</button>
+                            <button class="tab-btn" data-tab="security-questions">Security Questions</button>
+                            <button class="tab-btn" data-tab="access-control">Access Control</button>
+                        </div>
+                        
+                        <div class="tab-content">
+                            <div id="change-password" class="tab-pane active">
+                                <div class="change-password-form">
+                                    <h4>Change Admin Password</h4>
+                                    
+                                    <div class="form-group">
+                                        <label for="current-password">Current Password</label>
+                                        <input type="password" id="current-password">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="new-password">New Password</label>
+                                        <input type="password" id="new-password">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="confirm-password">Confirm New Password</label>
+                                        <input type="password" id="confirm-password">
+                                    </div>
+                                    
+                                    <div class="password-requirements">
+                                        <p>Password must:</p>
+                                        <ul>
+                                            <li>Be at least 8 characters long</li>
+                                            <li>Include at least one uppercase letter</li>
+                                            <li>Include at least one number</li>
+                                            <li>Include at least one special character</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <button class="btn btn-primary">Change Password</button>
+                                </div>
+                            </div>
+                            
+                            <div id="security-questions" class="tab-pane">
+                                <div class="security-questions-form">
+                                    <h4>Security Questions</h4>
+                                    <p>Set up security questions to recover your account if you forget your password.</p>
+                                    
+                                    <div class="security-question-item">
+                                        <div class="form-group">
+                                            <label for="question-1">Question 1</label>
+                                            <input type="text" id="question-1" placeholder="What was the name of your first pet?">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="answer-1">Answer</label>
+                                            <input type="text" id="answer-1">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="security-question-item">
+                                        <div class="form-group">
+                                            <label for="question-2">Question 2</label>
+                                            <input type="text" id="question-2" placeholder="What was the first street you lived on?">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="answer-2">Answer</label>
+                                            <input type="text" id="answer-2">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="security-question-item">
+                                        <div class="form-group">
+                                            <label for="question-3">Question 3</label>
+                                            <input type="text" id="question-3" placeholder="What was the name of your elementary school?">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="answer-3">Answer</label>
+                                            <input type="text" id="answer-3">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="security-question-item">
+                                        <div class="form-group">
+                                            <label for="question-4">Question 4</label>
+                                            <input type="text" id="question-4" placeholder="What was your childhood nickname?">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="answer-4">Answer</label>
+                                            <input type="text" id="answer-4">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="security-question-item">
+                                        <div class="form-group">
+                                            <label for="question-5">Question 5</label>
+                                            <input type="text" id="question-5" placeholder="What is your mother's maiden name?">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="answer-5">Answer</label>
+                                            <input type="text" id="answer-5">
+                                        </div>
+                                    </div>
+                                    
+                                    <button class="btn btn-primary">Save Security Questions</button>
+                                </div>
+                            </div>
+                            
+                            <div id="access-control" class="tab-pane">
+                                <div class="access-control-form">
+                                    <h4>Access Control</h4>
+                                    <p>Manage who can access the admin panel.</p>
+                                    
+                                    <div class="form-group">
+                                        <label for="session-timeout">Session Timeout (minutes)</label>
+                                        <input type="number" id="session-timeout" value="30" min="5" max="120">
+                                    </div>
+                                    
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="require-2fa" checked>
+                                        <label for="require-2fa">Require 2FA for login</label>
+                                    </div>
+                                    
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="login-notification" checked>
+                                        <label for="login-notification">Send email notification on login</label>
+                                    </div>
+                                    
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="ip-restriction">
+                                        <label for="ip-restriction">Enable IP restriction</label>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="allowed-ips">Allowed IP Addresses (one per line)</label>
+                                        <textarea id="allowed-ips" rows="3" placeholder="e.g., 192.168.1.1" disabled></textarea>
+                                    </div>
+                                    
+                                    <button class="btn btn-primary">Save Access Settings</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="login-modal" id="login-modal">
+        <div class="login-container">
+            <div class="login-header">
+                <h2>Admin Login</h2>
+                <p>Please log in to access the admin panel</p>
+            </div>
+            
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                
+                <div class="form-actions">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <a href="#" id="forgot-password">Forgot Password?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-login">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="forgot-password-modal" id="forgot-password-modal">
+        <div class="forgot-password-container">
+            <div class="forgot-password-header">
+                <h2>Password Recovery</h2>
+                <p>Please answer your security questions to reset your password</p>
+                <button class="close-modal" id="close-forgot-modal"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="security-questions-container" id="security-questions-container">
+                <!-- This will be populated dynamically -->
+            </div>
+            
+            <form id="reset-password-form" class="reset-password-form hidden">
+                <div class="form-group">
+                    <label for="new-reset-password">New Password</label>
+                    <input type="password" id="new-reset-password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-reset-password">Confirm New Password</label>
+                    <input type="password" id="confirm-reset-password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Reset Password</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="auth.js"></script>
+    <script src="admin-panel.js"></script>
+</body>
+</html> 

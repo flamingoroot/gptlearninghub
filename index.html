@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT LEARNING HUB - LEARN ML INTUITIVELY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="video-player.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.75/build/spline-viewer.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>GPT <span>LEARNING HUB</span></h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="https://dev-g.mykajabi.com/offers/GFLtFP5e/checkout" class="nav-action">Get Started <i class="fas fa-arrow-right"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>STUDENTS & WORKING PROFESSIONALLS:</h1>
+                <p>Build Real World AI Projects Today...Even If Your GitHub Is Empty.</p>
+                <div class="hero-buttons">
+                    <a href="https://dev-g.mykajabi.com/offers/GFLtFP5e/checkout" class="btn btn-primary">JOIN NOW !</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>15k+</h3>
+                        <p>Students</p>
+                    </div>
+                    <div class="stat">
+                        <h3>95%</h3>
+                        <p>Success Rate</p>
+                    </div>
+                </div>
+            </div>
+            <div class="laptop-container">
+                <div class="laptop">
+                    <!-- Laptop Screen Part -->
+                    <div class="laptop-screen">
+                        <div class="laptop-screen-bezel">
+                            <div class="laptop-camera"></div>
+                            <div class="laptop-video">
+                                <!-- Simple video player with custom thumbnail -->
+                                <video id="laptop-video" preload="metadata" poster="images/course.webp" width="100%" height="100%" controls playsinline>
+                                    <source src="demovideo/demo.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <!-- Adding center play button -->
+                                <div class="center-play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Laptop Keyboard Part -->
+                    <div class="laptop-keyboard">
+                        <div class="laptop-keys">
+                            <div class="touchpad"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Course Showcase Section -->
+    <section id="courses" class="course-showcase">
+        <div class="container">
+            <h2 class="section-title">Course</h2>
+            
+            <!-- Course Container -->
+            <div class="course-container">
+                <div class="course-info">
+                    <div class="course-meta">
+                        <span class="course-level"><i class="fas fa-signal"></i> Beginner</span>
+                        <span class="course-rating"><i class="fas fa-star"></i> 4.9 (2.5k+)</span>
+                    </div>
+                    <h3>LLM Liftoff</h3>
+                    <p>Learn HTML, CSS, JavaScript, React, Node.js, and more. Build real-world projects and gain the skills needed to become a professional web developer. This comprehensive course covers everything from the basics to advanced concepts.</p>
+                    <div class="course-details">
+                        <span><i class="fas fa-video"></i> 120 lessons</span>
+                        <span><i class="fas fa-clock"></i> 20 hours</span>
+                        <span><i class="fas fa-certificate"></i> Certificate</span>
+                    </div>
+                    <div class="course-pricing">
+                        <div class="price">
+                            <span class="original-price">$500</span>
+                            <span class="discounted-price">$249</span>
+                        </div>
+                        <a href="https://dev-g.mykajabi.com/offers/GFLtFP5e/checkout" class="btn btn-primary">Buy Now</a>
+                    </div>
+                </div>
+                <div class="course-image">
+                    <img src="images/course.webp">
+                    <div class="course-tag">Bestseller</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reviews">
+        <div class="container">
+            <h2 class="section-title">Student Reviews</h2>
+            <div class="reviews-slider-container">
+                <div class="reviews-slider">
+                    <!-- Slide 1 (3 reviews) -->
+                    <div class="reviews-slide">
+                        <!-- Review 1 -->
+                        <div class="review-box">
+                            <div class="review-content">
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="review-text">"The web development course completely transformed my career. I went from knowing nothing about coding to landing a full-stack developer job in just 6 months!"</p>
+                                <div class="reviewer">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student Avatar">
+                                    <div class="reviewer-info">
+                                        <h4>Michael Johnson</h4>
+                                        <p>Web Developer @ TechCorp</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Review 2 -->
+                        <div class="review-box">
+                            <div class="review-content">
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="review-text">"The machine learning course was incredibly well-structured. The instructor broke down complex concepts into manageable chunks, making it easy to follow along."</p>
+                                <div class="reviewer">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student Avatar">
+                                    <div class="reviewer-info">
+                                        <h4>Sarah Williams</h4>
+                                        <p>Data Scientist @ DataInnovate</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Review 3 -->
+                        <div class="review-box">
+                            <div class="review-content">
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p class="review-text">"I've taken several design courses, but the UX/UI masterclass here is by far the best. The real-world projects helped me build an impressive portfolio."</p>
+                                <div class="reviewer">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Student Avatar">
+                                    <div class="reviewer-info">
+                                        <h4>Emily Chen</h4>
+                                        <p>UX Designer @ CreativeStudio</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 (3 more reviews) -->
+                    <div class="reviews-slide">
+                        <!-- Review 4 -->
+                        <div class="review-box">
+                            <div class="review-content">
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="review-text">"The AI prompt engineering course gave me skills I use daily. I'm now able to create prompts that generate exactly what I need, saving me countless hours of work."</p>
+                                <div class="reviewer">
+                                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Student Avatar">
+                                    <div class="reviewer-info">
+                                        <h4>David Rodriguez</h4>
+                                        <p>AI Specialist @ FutureTech</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Review 5 -->
+                        <div class="review-box">
+                            <div class="review-content">
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="review-text">"The Flutter mobile development course was exceptional. Within weeks I was building professional-looking apps and now I have my own successful app on both app stores."</p>
+                                <div class="reviewer">
+                                    <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Student Avatar">
+                                    <div class="reviewer-info">
+                                        <h4>Jessica Park</h4>
+                                        <p>Mobile Developer @ AppStudio</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Review 6 -->
+                        <div class="review-box">
+                            <div class="review-content">
+                                <div class="review-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="review-text">"The data analytics bootcamp helped me transition from finance to tech. The instructors were responsive and the community support was invaluable during my job search."</p>
+                                <div class="reviewer">
+                                    <img src="https://randomuser.me/api/portraits/men/42.jpg" alt="Student Avatar">
+                                    <div class="reviewer-info">
+                                        <h4>Robert Chen</h4>
+                                        <p>Data Analyst @ FinTech Solutions</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel indicators -->
+                <div class="slider-indicators">
+                    <span class="slider-dot active" data-index="0"></span>
+                    <span class="slider-dot" data-index="1"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            
+            <div class="why-us-flex-container">
+                <!-- Left side: Spinning Globe -->
+                <div class="why-us-left">
+                    <div class="spinning-globe-container">
+                        <!-- White spinning globe with fixed Why Us text -->
+                        <div class="spinning-globe">
+                            <!-- Globe meridians and parallels (white lines) -->
+                            <div class="globe-meridian"></div>
+                            <div class="globe-meridian" style="transform: rotateY(30deg)"></div>
+                            <div class="globe-meridian" style="transform: rotateY(60deg)"></div>
+                            <div class="globe-meridian" style="transform: rotateY(90deg)"></div>
+                            <div class="globe-meridian" style="transform: rotateY(120deg)"></div>
+                            <div class="globe-meridian" style="transform: rotateY(150deg)"></div>
+                            
+                            <div class="globe-parallel" style="transform: rotateX(30deg)"></div>
+                            <div class="globe-parallel" style="transform: rotateX(60deg)"></div>
+                            <div class="globe-parallel" style="transform: rotateX(90deg)"></div>
+                            <div class="globe-parallel" style="transform: rotateX(120deg)"></div>
+                            <div class="globe-parallel" style="transform: rotateX(150deg)"></div>
+                        </div>
+                        
+                        <!-- Fixed text in the center -->
+                        <div class="globe-center-text">
+                            <span>WHY</span>
+                            <span class="highlight">US</span>
+                            <span>?</span>
+                        </div>
+                        
+                        <!-- Revolving circles around the globe -->
+                        <div class="revolving-circles">
+                            <div class="circle-orbit">
+                                <div class="revolving-circle" style="--circle-index: 0;">
+                                    <span>Expert Instructor</span>
+                                </div>
+                                <div class="revolving-circle" style="--circle-index: 1;">
+                                    <span>Practical Projects</span>
+                                </div>
+                                <div class="revolving-circle" style="--circle-index: 2;">
+                                    <span>Career Support</span>
+                                </div>
+                                <div class="revolving-circle" style="--circle-index: 3;">
+                                    <span>Flexible Learning</span>
+                                </div>
+                                <div class="revolving-circle" style="--circle-index: 4;">
+                                    <span>Real world impact</span>
+                                </div>
+                                <div class="revolving-circle" style="--circle-index: 5;">
+                                    <span>Cutting-Edge Content</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right side: What makes LLM Liftoff different? -->
+                <div class="why-us-right">
+                    <h3 class="different-title">What makes LLM Liftoff different?</h3>
+                    
+                    <div class="different-points">
+                        <div class="different-point">
+                            <div class="checkmark">✅</div>
+                            <p>Earn respect from others, since you'll understand the math behind LLMs</p>
+                        </div>
+                        
+                        <div class="different-point">
+                            <div class="checkmark">✅</div>
+                            <p>Attract recruiters, since your portfolio will finally stand out</p>
+                        </div>
+                        
+                        <div class="different-point">
+                            <div class="checkmark">✅</div>
+                            <p>Feel comfortable with AI/ML papers, and never feel intimidated again</p>
+                        </div>
+                        
+                        <div class="different-point">
+                            <div class="checkmark">✅</div>
+                            <p>Feel the "real world impact" and build LLMs for any industry</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaboration Section -->
+    <section id="partners" class="partners">
+        <div class="container">
+            <h2 class="section-title">Collaboration</h2>
+            <p>I've worked with creators like NeetCode, and 3Blue1Brown even endorsed our free ML platform.</p>
+            
+            <div class="partners-container">
+                <div class="partner-item">
+                    <img src="images/part2.avif" alt="NeetCode">
+                    <div class="partner-overlay">
+                        <h4>NeetCode</h4>
+                        <p>Cloud & AI Solutions</p>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <img src="images/part1.avif" alt="3Blue1Brown">
+                    <div class="partner-overlay">
+                        <h4>3Blue1Brown</h4>
+                        <p>Enterprise Technology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Spherical Bonus Resources Section -->
+    <section id="bonus-resources" class="bonus-resources">
+        <div class="container">
+            <h2 class="section-title">Bonus Resources</h2>
+            
+            <div class="sphere-container">
+                <!-- Main Sphere -->
+                <div class="bonus-sphere">
+                    <div class="sphere-inner">
+                        <div class="sphere-content active" data-index="0">
+                            <div class="bonus-image">
+                                <img src="https://images.unsplash.com/photo-1544396821-4dd40b938ad3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="eBook Bundle">
+                            </div>
+                            <div class="bonus-info">
+                                <h3>eBook Bundle</h3>
+                                <p>Collection of 5 premium eBooks covering advanced topics in AI, machine learning, and web development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sphere-content" data-index="1">
+                            <div class="bonus-image">
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Resource Templates">
+                            </div>
+                            <div class="bonus-info">
+                                <h3>Resource Templates</h3>
+                                <p>Premium templates for resumes, portfolios, and technical documentation to showcase your skills professionally.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sphere-content" data-index="2">
+                            <div class="bonus-image">
+                                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Private Community">
+                            </div>
+                            <div class="bonus-info">
+                                <h3>Private Community</h3>
+                                <p>Access to our exclusive community with direct mentorship from industry experts and networking opportunities.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sphere-content" data-index="3">
+                            <div class="bonus-image">
+                                <img src="https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Code Library">
+                            </div>
+                            <div class="bonus-info">
+                                <h3>Code Library</h3>
+                                <p>Access to our premium code library with over 500 ready-to-use components and project starters for faster development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sphere-content" data-index="4">
+                            <div class="bonus-image">
+                                <img src="https://images.unsplash.com/photo-1573495627361-d9b87960b12d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Certification">
+                            </div>
+                            <div class="bonus-info">
+                                <h3>Certification</h3>
+                                <p>Industry-recognized certification upon course completion that boosts your professional profile and job prospects.</p>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+                
+                <!-- Sphere Navigation -->
+                <div class="sphere-nav">
+                    <div class="sphere-dots">
+                        <span class="sphere-dot active" data-index="0"></span>
+                        <span class="sphere-dot" data-index="1"></span>
+                        <span class="sphere-dot" data-index="2"></span>
+                        <span class="sphere-dot" data-index="3"></span>
+                        <span class="sphere-dot" data-index="4"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section - Updated with Red & Black Theme -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-flex-container">
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do I enroll in a course?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Enrolling in a course is simple. Just browse our course catalog, select the course you're interested in, and click the "Enroll Now" button. You'll be prompted to create an account or log in if you already have one, and then you can complete the payment process to gain immediate access to the course materials.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do I have lifetime access to courses I purchase?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, once you purchase a course, you'll have unlimited lifetime access to all course materials, including future updates and improvements. You can revisit the content anytime you need a refresher or want to deepen your knowledge.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What if I'm not satisfied with a course?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer a 30-day money-back guarantee for all our courses. If you're not completely satisfied with your purchase, you can request a full refund within 30 days of enrollment. No questions asked!</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you offer any certificates?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, upon successful completion of a course, you'll receive a certificate of completion that you can add to your resume or share on professional networks like LinkedIn. Our certificates are recognized by many employers and can help demonstrate your skills and commitment to professional development.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I access courses on mobile devices?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! Our platform is fully responsive and optimized for mobile learning. You can access your courses on smartphones, tablets, laptops, or desktop computers, making it convenient to learn wherever and whenever works best for you.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Learning Journey?</h2>
+                <p>Join thousands of students already learning on GPT LEARNING HUB.</p>
+                <a href="https://dev-g.mykajabi.com/offers/GFLtFP5e/checkout" class="btn btn-primary btn-large">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>LLM<span>Liftoff</span></h3>
+                    <p>We're on a mission to transform education and make quality learning accessible to everyone, anywhere in the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Courses</h3>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Mobile Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Business</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Education St, Learning City</li>
+                        <li><i class="fas fa-phone-alt"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@llmliftoff.com</li>
+                    </ul>
+                    <div class="newsletter">
+                        <h4>Subscribe to our newsletter</h4>
+                        <form>
+                            <input type="email" placeholder="Your email address">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GPT LEARNING HUB. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="reviews.js"></script>
+    <script src="bonus-resources.js"></script>
+    <script src="why-us.js"></script>
+    <script src="chatbot-api.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html> 
